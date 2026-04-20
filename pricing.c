@@ -55,7 +55,7 @@ PricingResult price_advanced(OptionInfo option, char *model, int is_american, in
         result.price = price;
         result.runtime = stopwatch(t1, t2);
         result.simulations = 0;
-        result.steps = 1000;
+        result.steps = n_steps;
     }
     else if (strcmp("MonteCarlo", model) == 0)
     {

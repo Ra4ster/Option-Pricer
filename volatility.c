@@ -67,7 +67,6 @@ float get_volatility(float *past_prices, int n)
     {
         __m256 past = _mm256_loadu_ps(past_prices + i);
         __m256 present = _mm256_loadu_ps(past_prices + i + 1);
-        __m256 ones = _mm256_set1_ps(1.0f);
 
         __m256 rcp = _mm256_rcp_ps(past);
 
@@ -184,4 +183,32 @@ IVResult get_implied_vol(float S_0, float K, float T, float r, float market_pric
     out.iterations = max_iter;
     out.method = "bisection";
     return out;
+}
+
+float calculate_iv_percentile(OptionInfo today, float current_market_price, OptionInfo *history, float *hist_market_prices, int n)
+{
+    float iv_samples[252];
+    int count = 0;
+
+    IVResult current_res = get_implied_vol(today.current_price, today.strike_price, today.expiry_years, today.rf_rate, current_market_price);
+    if (!current_res.converged)
+        return -1.0f;
+
+    for (int i = 0; i < n; i++)
+    {
+        IVResult res = get_implied_vol(history[i].current_price, history[i].strike_price, history[i].expiry_years, history[i].rf_rate, hist_market_prices[i]);
+        if (res.converged)
+        {
+            iv_samples[count++] = res.sigma;
+        }
+    }
+
+    int below = 0;
+    for (int i = 0; i < count; i++)
+    {
+        if (iv_samples[i] < current_res.sigma)
+            below++;
+    }
+
+    return (float)below / count;
 }

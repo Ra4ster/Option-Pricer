@@ -29,6 +29,7 @@ void benchmark_model(OptionInfo option, float american, char *model)
         results[4] = price_advanced(option, model, american, 500, 0);
         results[5] = price_advanced(option, model, american, 1000, 0);
         results[6] = price_advanced(option, model, american, 5000, 0);
+        print_results(7, results, american);
     }
     else if (strcmp(model, "MonteCarlo") == 0)
     {
@@ -39,6 +40,7 @@ void benchmark_model(OptionInfo option, float american, char *model)
         results[2] = price_advanced(option, model, american, 0, 1e4);
         results[3] = price_advanced(option, model, american, 0, 1e5);
         results[4] = price_advanced(option, model, american, 0, 1e6);
+        print_results(5, results, american);
     }
     else
     {

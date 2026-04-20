@@ -9,6 +9,7 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include <locale.h>
+#include "pricing.h"
 
 // Fallback if MinGW is being stubborn with constants
 #ifndef M_SQRT1_2

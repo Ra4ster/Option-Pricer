@@ -1,13 +1,12 @@
 #include "binom.h"
 
-float *binom_tree(float S_0, float K, float T, float r, float sigma, int n,
+float *binom_tree(float S_0, float K, float T, float sigma, int n,
                   int is_put)
 {
     float dt = T / n;
     float up = expf(sigma * sqrt(dt));
     float down = 1.0f / up;
     float step_up = up / down;
-    float p = (expf(r * dt) - down) / (up - down);
     float S_curr = S_0 * powf(down, n);
     float *values = (float *)malloc(sizeof(float) * (n + 1));
 
@@ -39,7 +38,7 @@ float binom_value(float S_0, float K, float T, float r, float sigma, int n,
     float p_inv = 1.0f - p;
     float e_rdt = expf(-r * dt);
 
-    float *values = binom_tree(S_0, K, T, r, sigma, n, is_put);
+    float *values = binom_tree(S_0, K, T, sigma, n, is_put);
     if (!values)
         return NAN;
 

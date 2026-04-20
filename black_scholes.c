@@ -1,4 +1,5 @@
 #include "black_scholes.h"
+#include "pricing.h"
 
 inline float d1_(float S_0, float K, float r, float sigma, float T)
 {

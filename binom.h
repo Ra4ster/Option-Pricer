@@ -4,7 +4,7 @@
 #include <math.h>
 #include <immintrin.h>
 
-float *binom_tree(float S_0, float K, float T, float r, float sigma, int n,
+float *binom_tree(float S_0, float K, float T, float sigma, int n,
                   int is_put);
 
 float binom_value(float S_0, float K, float T, float r, float sigma, int n,

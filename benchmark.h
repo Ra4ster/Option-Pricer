@@ -7,4 +7,4 @@ float benchmark_models(OptionInfo option, float american);
 
 void benchmark_model(OptionInfo option, float american, char *model);
 
-#endif
+#endif // BENCHMARK_H

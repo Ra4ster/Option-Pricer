@@ -1,6 +1,8 @@
 #ifndef VOLATILITY_H
 #define VOLATILITY_H
 
+#include "pricing.h"
+
 // Gets the mean of data with count n.
 float get_mean(float *data, int n);
 
@@ -19,5 +21,9 @@ typedef struct IVResult
 } IVResult;
 
 IVResult get_implied_vol(float S_0, float K, float T, float r, float market_price);
+
+// Naive implementation of IV Percentile. Uses AVX2 `get_implied_vol`.
+float calculate_iv_percentile(OptionInfo today, float current_market_price, OptionInfo *history,
+                              float *hist_market_prices, int n);
 
 #endif // VOLATILITY_H
