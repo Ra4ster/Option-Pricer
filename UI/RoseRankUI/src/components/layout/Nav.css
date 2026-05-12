@@ -1,0 +1,110 @@
+.custom-nav {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 1, 3, 0.72);
+}
+
+.navbar-brand,
+.nav-link {
+  color: #fffffa !important;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+  color: #ee4266 !important;
+}
+
+.btn-outline-login {
+  border-color: #ee4266;
+  color: #ee4266;
+}
+
+.btn-outline-login:hover {
+  background-color: #ee4266;
+  color: #fffffa;
+}
+
+.notificationButton {
+  position: relative;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 1px;
+  right: 4px;
+
+  z-index: 10;
+
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: #ee4266;
+  color: white;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.search-dark {
+  background-color: #0e1214 !important;
+  border: 1px solid #333 !important;
+  color: #888 !important;
+}
+
+.search-dark::placeholder {
+  color: #555 !important;
+}
+
+.search-dark:focus {
+  background-color: #151515 !important;
+  color: #ccc !important; /* Text gets a bit brighter when active */
+  border-color: #555 !important;
+  box-shadow: none !important; /* Removes the default blue Bootstrap glow */
+  outline: none;
+}
+
+.search-dark::-webkit-search-cancel-button {
+  filter: invert(0.5); /* Makes the 'X' darker/grey instead of white */
+}
+
+.bell-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.bell-outline,
+.bell-fill {
+  position: absolute;
+  transition:
+    opacity 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+  font-size: 1.5rem;
+}
+
+.bell-fill {
+  opacity: 0;
+  color: #ffffff !important;
+}
+
+.bell-outline {
+  opacity: 1;
+  color: #888;
+}
+
+.bell-wrapper:hover .bell-outline {
+  opacity: 0;
+}
+
+.bell-wrapper:hover .bell-fill {
+  opacity: 1;
+}

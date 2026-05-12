@@ -1,0 +1,71 @@
+/* FAQ Section */
+.list-group {
+  max-width: 950px;
+  margin: 0 auto;
+  gap: 16px;
+  background: transparent;
+}
+
+.list-group-item {
+  background: rgba(0, 1, 3, 0.52) !important;
+  color: #fffffa !important;
+
+  border: 1px solid rgba(255, 255, 250, 0.12) !important;
+  border-radius: 20px !important;
+
+  padding: 24px 28px;
+  box-shadow: rgba(0, 0, 0, 0.32) 0 18px 50px;
+  backdrop-filter: blur(12px);
+
+  transition: all 0.2s ease;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(238, 66, 102, 0.45) !important;
+  box-shadow:
+    rgba(238, 66, 102, 0.08) 0 0 0 1px,
+    rgba(0, 0, 0, 0.4) 0 24px 60px;
+}
+
+.list-group-item h5 {
+  color: #fffffa;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.list-group-item p {
+  color: rgba(255, 255, 250, 0.74);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.list-group-item::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: 0;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(238, 66, 102, 0.75),
+    rgba(255, 255, 250, 0.18),
+    transparent
+  );
+}
+
+.list-group-item {
+  position: relative;
+  padding-left: 24px 28px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .list-group-item {
+    padding: 20px 20px 20px 28px;
+  }
+}

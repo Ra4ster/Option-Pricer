@@ -1,0 +1,88 @@
+.tier-section {
+  padding: 20px 20px;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.tier-card {
+  background: rgba(0, 1, 3, 0.52);
+  border: 1px solid rgba(255, 255, 250, 0.12);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 24px 60px;
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.tier-name-btn {
+  align-self: center;
+  border: 1px solid rgba(238, 66, 102, 0.65);
+  background: rgba(238, 66, 102, 0.12);
+  color: #ee4266;
+  border-radius: 999px;
+  padding: 9px 22px;
+  font-weight: 800;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.tier-price {
+  color: #fffffa;
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 26px 0 8px;
+}
+
+.tier-subtitle {
+  color: rgba(255, 255, 250, 0.68);
+  text-align: center;
+  min-height: 48px;
+}
+
+.tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 28px;
+}
+
+.tier-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 250, 0.82);
+  margin-bottom: 14px;
+}
+
+.tier-features i {
+  color: #ee4266;
+  font-size: 1rem;
+}
+
+.tier-join-btn {
+  margin-top: auto;
+  border: none;
+  background: #ee4266;
+  color: #fffffa;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 800;
+}
+
+.tier-join-btn:hover {
+  background: #fffffa;
+  color: #000103;
+}
+
+@media (max-width: 992px) {
+  .tier-grid {
+    grid-template-columns: 1fr;
+  }
+}

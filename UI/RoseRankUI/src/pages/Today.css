@@ -1,0 +1,70 @@
+.todayHeader {
+  background-color: #0e1214;
+  min-height: 100vh;
+
+  padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 10px;
+
+  justify-self: center;
+}
+
+.dateGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  justify-self: end;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.filterButton {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+
+  color: rgba(255, 255, 255, 0.72);
+
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+.filterButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.activeFilter {
+  background: #ee4266;
+  color: white;
+  border-color: #ee4266;
+}
+
+.high-impact {
+  align-items: start;
+}
+
+.topBar h4 {
+  margin-bottom: 0 !important;
+}
+
+.topBar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+}
+
+.marketSection {
+  margin-top: 28px;
+}

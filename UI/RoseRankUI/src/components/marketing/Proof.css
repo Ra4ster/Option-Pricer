@@ -1,0 +1,186 @@
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 420px));
+  gap: 28px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.proof-card,
+.founder-card {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+
+  background: rgba(0, 1, 3, 0.52);
+  color: #fffffa;
+
+  border: 1px solid rgba(255, 255, 250, 0.12);
+  border-radius: 22px;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0 24px 60px;
+  backdrop-filter: blur(12px);
+
+  overflow: hidden;
+}
+
+.copy-email-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fffffa;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.email-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.email-text {
+  color: rgba(255, 255, 250, 0.88);
+  font-size: 0.92rem;
+}
+
+.copy-icon-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ee4266;
+  color: #fffffa;
+
+  transition: 0.2s ease;
+}
+
+.copy-icon-btn:hover {
+  transform: scale(1.06);
+  background: #ff5a7a;
+}
+
+.copy-icon-btn i {
+  font-size: 1rem;
+}
+
+.copy-email-btn:hover {
+  background: #ee4266;
+  border-color: #ee4266;
+}
+
+.proof-card .card-header,
+.founder-card .card-header {
+  background: rgba(238, 66, 102, 0.12);
+  color: #ee4266;
+
+  border-bottom: 1px solid rgba(255, 255, 250, 0.1);
+
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.proof-card .card-body,
+.founder-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  height: 100%;
+  padding: 32px;
+}
+
+.proof-card .card-title,
+.founder-card .card-title {
+  color: #fffffa;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.proof-card .card-text,
+.founder-card .card-text {
+  color: rgba(255, 255, 250, 0.72);
+  line-height: 1.7;
+}
+
+.founder-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+
+  object-fit: cover;
+  object-position: center top;
+
+  display: block;
+  margin: 0 auto 18px;
+
+  -webkit-touch-callout: none; /* Prevents opening the image in the iOS image viewer */
+  -webkit-user-select: none; /* Disables text selection on images */
+  -moz-user-select: none; /* Firefox support */
+  -ms-user-select: none; /* Internet Explorer support */
+  user-select: none; /* Prevents text selection on images */
+  pointer-events: none; /* Prevents clicking and dragging */
+  -webkit-user-drag: none; /* Disables image dragging on WebKit-based browsers */
+  user-drag: none; /* General image dragging prevention */
+
+  border: 3px solid rgba(238, 66, 102, 0.85);
+  box-shadow:
+    0 0 0 6px rgba(238, 66, 102, 0.12),
+    0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+.founder-card {
+  width: 22rem;
+}
+
+.proof-card .btn-primary {
+  background-color: #ee4266;
+  border-color: #ee4266;
+  color: #fffffa;
+
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 10px 22px;
+  margin-top: 10px;
+}
+
+.proof-card .btn-primary:hover {
+  background-color: #fffffa;
+  border-color: #fffffa;
+  color: #000103;
+}
+
+.founder-card .text-muted {
+  color: rgba(255, 255, 250, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
