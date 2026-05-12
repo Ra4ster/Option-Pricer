@@ -92,7 +92,7 @@ function Home() {
             </SignedOut>
             <SignedIn>
               <Link to="/today" className="button hero-btn hero-btn-primary">
-                Get Started
+                See Today
               </Link>
             </SignedIn>
 

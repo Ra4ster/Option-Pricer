@@ -1,2 +1,8 @@
 docker-compose.yaml
 docker-compose.yml
+.env
+.env.local
+.env.production
+node_modules/
+UI/RoseRankUI/node_modules/
+DB/src/main/resources/application.properties

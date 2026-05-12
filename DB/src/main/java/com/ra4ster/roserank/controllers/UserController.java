@@ -1,8 +1,7 @@
 package com.ra4ster.roserank.controllers;
 
-import java.security.Principal;
-
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,16 +15,15 @@ public class UserController {
 
     private final UserService userService;
 
-    // Constructor injection is preferred for better testability
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    
+
     @GetMapping("/me")
-    public ResponseEntity<User> getCurrentUser(Principal principal) {
-        // principal.getName() contains the Clerk User ID 
-        // passed through your Security filter chain
-        return userService.getUserByClerkId(principal.getName())
+    public ResponseEntity<User> getCurrentUser(JwtAuthenticationToken auth) {
+        String clerkId = auth.getToken().getSubject();
+
+        return userService.getUserByClerkId(clerkId)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
